@@ -96,8 +96,8 @@ function App() {
   }, [numbers, isPlaying, stop]);
 
   return (
-    <div className="flex justify-center items-center h-screen mt-10 mb-10">
-      <div className="w-[600px] p-5 h-[750px] border-2 border-gray-800 rounded-lg">
+    <div className="flex justify-center items-center h-screen pt-5">
+      <div className="w-[600px] p-5 h-[700px] border-2 border-gray-800 rounded-lg">
         <ScoreBoard
           point={point}
           setPoint={setPoint}
