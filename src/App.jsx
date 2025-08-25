@@ -10,10 +10,10 @@ function App() {
   const { time, start, reset, stop } = useTime();
   const [isPlaying, setIsPlaying] = useState(false);
   const [point, setPoint] = useState(5);
-  const [isStatus, setIsStatus] = useState(false); // ✅ ALL CLEARED
-  const [isGameOver, setIsGameOver] = useState(false); // ✅ GAME OVER
+  const [isStatus, setIsStatus] = useState(false); // ALL CLEARED
+  const [isGameOver, setIsGameOver] = useState(false); //GAME OVER
   const [nextNumber, setNextNumber] = useState(1);
-  const [autoPlay, setAutoPlay] = useState(false); // ✅ Auto Play state
+  const [autoPlay, setAutoPlay] = useState(false); // Auto Play state
 
   // Hook remove point
   const { points: numbers, setPoints: setNumbers, removePoint, clearAllTimeouts } = useRemovePoint(1000, 300);
@@ -33,7 +33,7 @@ function App() {
     setIsPlaying(true);
     setNextNumber(1);
 
-    // ✅ Clear timeout cũ để tránh mất số khi restart
+    // Clear timeout cũ để tránh mất số khi restart
     clearAllTimeouts();
     setNumbers([]);
     generateRandomNumbers(point);
@@ -61,7 +61,7 @@ function App() {
   const handleClickNumber = (id) => {
     if (!isPlaying || isGameOver) return;
     if (id !== nextNumber) {
-      // ❌ Sai số -> GAME OVER
+      // Sai số -> GAME OVER
       stop();
       setIsPlaying(false);
       setIsGameOver(true);
@@ -75,7 +75,7 @@ function App() {
     }
   };
 
-  // ✅ Auto Play effect
+  // Auto Play effect
   useEffect(() => {
     if (!autoPlay || !isPlaying || isGameOver) return;
 
@@ -86,7 +86,7 @@ function App() {
     return () => clearInterval(interval);
   }, [autoPlay, isPlaying, isGameOver, nextNumber]);
 
-  // ✅ Khi tất cả số biến mất thì mới dừng game
+  // Khi tất cả số biến mất thì mới dừng game
   useEffect(() => {
     if (isPlaying && numbers.length === 0) {
       stop();

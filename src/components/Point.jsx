@@ -7,7 +7,7 @@ const Point = ({ value, x, y, clicked, fading, onClick }) => {
     useEffect(() => {
         let interval;
         if (clicked) {
-            setCountdown(3.0); // bắt đầu từ 3s
+            setCountdown(3.0); 
             setOpacity(1);
 
             interval = setInterval(() => {
@@ -16,7 +16,7 @@ const Point = ({ value, x, y, clicked, fading, onClick }) => {
                         clearInterval(interval);
                         return 0;
                     }
-                    return (prev - 0.1).toFixed(1); // chỉ giữ 1 số thập phân
+                    return (prev - 0.1).toFixed(1); 
                 });
 
                 // giảm opacity tỉ lệ thuận countdown

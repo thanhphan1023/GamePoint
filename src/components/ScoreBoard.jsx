@@ -1,5 +1,4 @@
 import React from 'react';
-
 const ScoreBoard = ({ point, setPoint, time, setNumbers, isStatus, isGameOver }) => {
   return (
     <div className="text-xl mb-5">
